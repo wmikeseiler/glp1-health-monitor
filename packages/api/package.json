@@ -11,6 +11,7 @@
   "dependencies": {
     "@trpc/server": "^11.0.0",
     "superjson": "^2.2.0",
+    "drizzle-orm": "^0.36.0",
     "zod": "^3.23.0",
     "@glp1/db": "workspace:*",
     "@glp1/shared": "workspace:*"

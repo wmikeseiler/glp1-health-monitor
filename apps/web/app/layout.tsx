@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TRPCReactProvider } from "~/lib/trpc/react";
 
 export const metadata: Metadata = {
   title: "GLP-1 Health Monitor",
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <TRPCReactProvider>{children}</TRPCReactProvider>
+      </body>
     </html>
   );
 }
