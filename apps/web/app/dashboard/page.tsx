@@ -84,6 +84,27 @@ export default async function DashboardPage() {
           <span style={{ fontSize: 16, fontWeight: 600, color: "#111827" }}>Vitals</span>
           <span style={{ fontSize: 13, color: "#6b7280" }}>Monitor blood pressure and heart rate</span>
         </Link>
+        <Link
+          href="/dashboard/food"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 6,
+            padding: "20px 24px",
+            background: "#fff",
+            border: "1px solid #e5e7eb",
+            borderRadius: 12,
+            textDecoration: "none",
+            minWidth: 180,
+            flex: "1 1 180px",
+            maxWidth: 240,
+            transition: "border-color 0.15s",
+          }}
+        >
+          <span style={{ fontSize: 28 }}>&#127869;</span>
+          <span style={{ fontSize: 16, fontWeight: 600, color: "#111827" }}>Food Tracking</span>
+          <span style={{ fontSize: 13, color: "#6b7280" }}>Log meals and track daily macros</span>
+        </Link>
       </div>
     </main>
   );
