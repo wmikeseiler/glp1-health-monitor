@@ -1,2 +1,3 @@
-// @glp1/db
-export {};
+export * from "./schema";
+export * from "./relations";
+export { db } from "./client";
