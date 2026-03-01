@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+dist/
+
+# Turborepo
+.turbo/
+
+# Environment variables
+.env*.local
+
+# Expo / React Native
+.expo/
+ios/
+android/
+
+# TypeScript
+*.tsbuildinfo
+
+# OS files
+.DS_Store
+
+# Claude Code
+.claude/
