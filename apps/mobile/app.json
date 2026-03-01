@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "GLP-1 Health Monitor",
+    "slug": "glp1-health-monitor",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "glp1",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.glp1.healthmonitor"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.glp1.healthmonitor"
+    },
+    "plugins": ["expo-router"]
+  }
+}
