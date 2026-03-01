@@ -1,22 +1,15 @@
-import { createClient } from "~/lib/supabase/server";
-import { redirect } from "next/navigation";
 import Link from "next/link";
 import { DashboardOverview } from "./overview";
 
-export const dynamic = "force-dynamic";
-
-export default async function DashboardPage() {
-  const supabase = await createClient();
-  const { data: { user } } = await supabase.auth.getUser();
-
-  if (!user) {
-    redirect("/auth/login");
-  }
-
+export default function DashboardPage() {
   return (
-    <main style={{ maxWidth: 860, margin: "40px auto", padding: 24 }}>
-      <h1 style={{ margin: "0 0 4px", fontSize: 28, fontWeight: 700, color: "#111827" }}>Dashboard</h1>
-      <p style={{ margin: "0 0 36px", color: "#6b7280", fontSize: 15 }}>Welcome back, {user.email}</p>
+    <>
+      <h1 style={{ margin: "0 0 4px", fontSize: 28, fontWeight: 700, color: "#111827" }}>
+        Dashboard
+      </h1>
+      <p style={{ margin: "0 0 36px", color: "#6b7280", fontSize: 15 }}>
+        Welcome back. Here is your health summary.
+      </p>
 
       {/* Live summary data — client component with tRPC */}
       <DashboardOverview />
@@ -132,7 +125,28 @@ export default async function DashboardPage() {
           <span style={{ fontSize: 16, fontWeight: 600, color: "#111827" }}>Recipes</span>
           <span style={{ fontSize: 13, color: "#6b7280" }}>Browse GLP-1 friendly recipes</span>
         </Link>
+        <Link
+          href="/dashboard/reports"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 6,
+            padding: "20px 24px",
+            background: "#fff",
+            border: "1px solid #e5e7eb",
+            borderRadius: 12,
+            textDecoration: "none",
+            minWidth: 180,
+            flex: "1 1 180px",
+            maxWidth: 240,
+            transition: "border-color 0.15s",
+          }}
+        >
+          <span style={{ fontSize: 28 }}>&#128202;</span>
+          <span style={{ fontSize: 16, fontWeight: 600, color: "#111827" }}>Reports</span>
+          <span style={{ fontSize: 13, color: "#6b7280" }}>Generate summaries and export data</span>
+        </Link>
       </div>
-    </main>
+    </>
   );
 }
