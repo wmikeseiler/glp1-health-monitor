@@ -5,6 +5,7 @@ import { injectionRouter } from "./router/injection";
 import { vitalsRouter } from "./router/vitals";
 import { foodRouter } from "./router/food";
 import { recipeRouter } from "./router/recipe";
+import { dashboardRouter } from "./router/dashboard";
 
 export const appRouter = createTRPCRouter({
   medication: medicationRouter,
@@ -13,6 +14,7 @@ export const appRouter = createTRPCRouter({
   vitals: vitalsRouter,
   food: foodRouter,
   recipe: recipeRouter,
+  dashboard: dashboardRouter,
 });
 
 export type AppRouter = typeof appRouter;

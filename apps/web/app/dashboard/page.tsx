@@ -1,6 +1,7 @@
 import { createClient } from "~/lib/supabase/server";
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import { DashboardOverview } from "./overview";
 
 export const dynamic = "force-dynamic";
 
@@ -13,9 +14,14 @@ export default async function DashboardPage() {
   }
 
   return (
-    <main style={{ maxWidth: 800, margin: "40px auto", padding: 24 }}>
-      <h1 style={{ margin: "0 0 8px", fontSize: 28, fontWeight: 700, color: "#111827" }}>Dashboard</h1>
-      <p style={{ margin: "0 0 32px", color: "#6b7280", fontSize: 15 }}>Welcome, {user.email}!</p>
+    <main style={{ maxWidth: 860, margin: "40px auto", padding: 24 }}>
+      <h1 style={{ margin: "0 0 4px", fontSize: 28, fontWeight: 700, color: "#111827" }}>Dashboard</h1>
+      <p style={{ margin: "0 0 36px", color: "#6b7280", fontSize: 15 }}>Welcome back, {user.email}</p>
+
+      {/* Live summary data — client component with tRPC */}
+      <DashboardOverview />
+
+      <div style={{ margin: "40px 0 16px", borderTop: "1px solid #e5e7eb" }} />
 
       <h2 style={{ margin: "0 0 16px", fontSize: 18, fontWeight: 600, color: "#374151" }}>
         Health Tracking
